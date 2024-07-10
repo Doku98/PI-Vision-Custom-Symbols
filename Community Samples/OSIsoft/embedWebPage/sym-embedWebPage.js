@@ -17,7 +17,7 @@
 //************************************
 // Begin defining a new symbol
 //************************************
-(function (CS) {
+(function (VS) {
 	'use strict';
 	// Specify the symbol definition	
 	var myCustomSymbolDefinition = {
@@ -27,7 +27,7 @@
 		// Specify the user-friendly name of the symbol that will appear in PI Vision
 		displayName: 'Embed Web Page',
 		// Specify the number of data sources for this symbol
-		datasourceBehavior: CS.Extensibility.Enums.DatasourceBehaviors.Single,
+		datasourceBehavior: VS.Extensibility.Enums.DatasourceBehaviors.Single,
 		// Specify the location of an image file to use as the icon for this symbol
 		iconUrl: '/Scripts/app/editor/symbols/ext/Icons/embedWebPage.png',
 		visObjectType: symbolVis,
@@ -72,7 +72,7 @@
 	//************************************
 	//function myCustomSymbolInitFunction(scope, elem) {
 	function symbolVis() { }
-    CS.deriveVisualizationFromBase(symbolVis);
+    VS.deriveVisualizationFromBase(symbolVis);
 	symbolVis.prototype.init = function(scope, elem) {
 		// Specify which function to call when a data update or configuration change occurs 
 		//this.onDataUpdate = myCustomDataUpdateFunction;
@@ -129,6 +129,6 @@
 		//return { configChange:myCustomConfigurationChangeFunction };
 	}
 	// Register this custom symbol definition with PI Vision
-	CS.symbolCatalog.register(myCustomSymbolDefinition);
+	VS.symbolCatalog.register(myCustomSymbolDefinition);
 	
 })(window.PIVisualization);
